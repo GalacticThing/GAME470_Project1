@@ -9,13 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5297665003230985465}
-  - component: {fileID: 5297665003230985415}
-  - component: {fileID: 5297665003230985414}
   - component: {fileID: 5297665003230985412}
   - component: {fileID: 5297665003230985413}
+  - component: {fileID: 1916514084}
   m_Layer: 0
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,34 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5297665003230985415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5297665003230985464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c92a48b84640ca48b1d95480689c187, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5297665003230985414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5297665003230985464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c06f8249d7de234c982b2e3615f61f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  accelerationFactor: 15
-  driftFactor: 0
-  dragFactor: 1
-  maxSpeed: 10
 --- !u!50 &5297665003230985412
 Rigidbody2D:
   serializedVersion: 4
@@ -114,6 +85,29 @@ PolygonCollider2D:
       - {x: -0.55827504, y: -1.2590475}
       - {x: 0.58778536, y: -1.2516699}
       - {x: 0.5923143, y: 0.93197584}
+--- !u!114 &1916514084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297665003230985464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d476765d2eb97a94f8a36b6b95da276a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  moveSpeed: 0.04
+  maxSpeed: 6
+  minSpeed: 0.01
 --- !u!1 &5297665004806310227
 GameObject:
   m_ObjectHideFlags: 0

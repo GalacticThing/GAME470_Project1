@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PathFollow : CarController //MonoBehaviour
+public class PathFollow : MonoBehaviour
 {
     [SerializeField]
     //private Transform[] waypoints;
@@ -32,7 +32,7 @@ public class PathFollow : CarController //MonoBehaviour
 
     private void Move()
     {
-        print("Rival Start Moving");
+        //print("Rival Start Moving");
 
         // If Rival didn't reach the last waypoint it can move
         // If Rival reached last waypoint then it stops
@@ -47,14 +47,14 @@ public class PathFollow : CarController //MonoBehaviour
             
             
             
-            print("Rival continue to move" + waypointIndex);
+            //print("Rival continue to move" + waypointIndex);
 
         // If Rival reaches position of waypoint he walked towards
         //The waypointIndex is increased by 1
         // And Rival starts to walk to next waypoint
            if( transform.position == waypoints[waypointIndex].transform.position)
             {
-                print("Rival reached checkpoint" + waypointIndex) ;
+                //print("Rival reached checkpoint" + waypointIndex);
                 waypointIndex += 1;
             }
         }

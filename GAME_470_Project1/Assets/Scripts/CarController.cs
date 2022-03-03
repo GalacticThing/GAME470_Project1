@@ -90,7 +90,7 @@ public class CarController : MonoBehaviour
         carRigidbody2D.AddForce(engineForceVector, ForceMode2D.Force);
     }
 
-    void ApplySteering() // when the car comes in contact with rails that will force it to turn
+    protected void ApplySteering() // when the car comes in contact with rails that will force it to turn
                             // this function should control it
     {
         //Limits the cars ability to turn when moving slowly // prevents the car from infinetly spinning in place
@@ -106,7 +106,7 @@ public class CarController : MonoBehaviour
         accelerationInput = inputVector.y;
     }
 
-    void KillHorizontalVelocity() // limits the cars ability to move Horizontaly
+    protected void KillHorizontalVelocity() // limits the cars ability to move Horizontaly
     {
         Vector2 forwardVelocity = transform.up * Vector2.Dot(carRigidbody2D.velocity, transform.up);
         Vector2 rightVelocity = transform.right * Vector2.Dot(carRigidbody2D.velocity, transform.right);
