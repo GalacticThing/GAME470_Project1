@@ -43,9 +43,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -6780034977000449606, guid: 3c16d0ff2e72db24e982b7cfbe91e3b4, type: 2}
   m_audioClip: {fileID: 8300000, guid: d67b17005a87ea84f912694c3b1a3781, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -201,9 +201,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -9149407495064956445, guid: 3c16d0ff2e72db24e982b7cfbe91e3b4, type: 2}
-  m_audioClip: {fileID: 8300000, guid: f4a2573b2a32c5c4eb68549666ee7995, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d84894ee2f385a24ebd17c3843528110, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -424,9 +424,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5297665003230985465}
   - component: {fileID: 5297665003230985412}
-  - component: {fileID: 5297665003230985413}
   - component: {fileID: 1916514084}
   - component: {fileID: 5240346240993058243}
+  - component: {fileID: 2826705414271714166}
   m_Layer: 0
   m_Name: Car
   m_TagString: Player
@@ -471,36 +471,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &5297665003230985413
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5297665003230985464}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.022222696, y: 1.2814857}
-      - {x: -0.5614576, y: 0.9527895}
-      - {x: -0.55827504, y: -1.2590475}
-      - {x: 0.58778536, y: -1.2516699}
-      - {x: 0.5923143, y: 0.93197584}
 --- !u!114 &1916514084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,9 +564,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9859acfd9559b7447b70b3b129de475e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carBrakeAudioSource: {fileID: 0}
-  carEngineAudioSource: {fileID: 0}
-  carCrashAudioSource: {fileID: 0}
+  carBrakeAudioSource: {fileID: 408695171}
+  carEngineAudioSource: {fileID: 892852177}
+  carCrashAudioSource: {fileID: 1587677458}
+--- !u!61 &2826705414271714166
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297665003230985464}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01846458, y: 0.76443493}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.29834267, y: 0.6380935}
+  m_EdgeRadius: 0
 --- !u!1 &5297665004806310227
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 892852177, guid: ee34f6be655d1c64a85943d0c1ba5249, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d84894ee2f385a24ebd17c3843528110, type: 3}
     - target: {fileID: 1916514084, guid: ee34f6be655d1c64a85943d0c1ba5249, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
@@ -431,7 +435,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 4
   totalLaps: 3
 --- !u!114 &9022201335648555562
 MonoBehaviour:
