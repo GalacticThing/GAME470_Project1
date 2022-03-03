@@ -52,7 +52,7 @@ public class CarController : MonoBehaviour
         ApplySteering();
     }
 
-    void ApplyEngineForce() //applies a force that pushes the car either forward or backwards
+    protected void ApplyEngineForce() //applies a force that pushes the car either forward or backwards
     {
         //Calculates how much forward we are going in a given direction
         velocityVsUp = Vector2.Dot(transform.up, carRigidbody2D.velocity);
