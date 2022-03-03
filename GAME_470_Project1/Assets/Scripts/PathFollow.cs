@@ -12,6 +12,8 @@ public class PathFollow : MonoBehaviour
     //private float moveSpeed = 2f;
     public float moveSpeed = 2f;
 
+    
+
     //Index of curr waypoint from which Rival moves
     private int waypointIndex = 0;
 

@@ -8,7 +8,7 @@ public class PlayerPathFollow : MonoBehaviour
     public Transform[] waypoints; // the array containing the waypoints of the car
     public float moveSpeed = 0f; // controls the rate at which the car moves along the path
     private int waypointIndex = 0; // used to identify waypoints and keep the car on the path
-    protected float accelerationInput = 0; // checks it the player is pressing forward or back
+    public float accelerationInput = 0; // checks it the player is pressing forward or back
 
     protected float velocityVsUp = 0;
 
