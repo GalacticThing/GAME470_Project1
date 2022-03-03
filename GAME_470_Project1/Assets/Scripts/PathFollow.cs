@@ -15,6 +15,12 @@ public class PathFollow : MonoBehaviour
     //Index of curr waypoint from which Rival moves
     private int waypointIndex = 0;
 
+    // Lap counter
+    private int lapCounter = 1; //keeps track of a cars current Lap
+
+    public int totalLaps = 3;
+   
+
 
     void Start()
     {
@@ -49,13 +55,19 @@ public class PathFollow : MonoBehaviour
             
             //print("Rival continue to move" + waypointIndex);
 
-        // If Rival reaches position of waypoint he walked towards
-        //The waypointIndex is increased by 1
-        // And Rival starts to walk to next waypoint
-           if( transform.position == waypoints[waypointIndex].transform.position)
+            // If Rival reaches position of waypoint he walked towards
+            //The waypointIndex is increased by 1
+            // And Rival starts to walk to next waypoint
+           if( transform.position == waypoints[waypointIndex].transform.position && waypointIndex != waypoints.Length)
             {
-                //print("Rival reached checkpoint" + waypointIndex);
+                //print(" Rival reached checkpoint" + waypointIndex);
                 waypointIndex += 1;
+            }
+           if(waypointIndex == waypoints.Length && lapCounter != totalLaps)
+            {
+                waypointIndex = 0;
+                lapCounter++;
+                print("This Cars Current Lap is " + lapCounter);
             }
         }
     }

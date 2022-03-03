@@ -15,6 +15,11 @@ public class PlayerPathFollow : MonoBehaviour
     public float maxSpeed; // the maximum speed the car can travel
     public float minSpeed; // value used to prevent the car from totally reversing
 
+    // Lap counter
+    private int lapCounter = 1; //keeps track of a cars current Lap
+
+    public int totalLaps = 3;
+
 
 
     // Start is called before the first frame update
@@ -65,7 +70,7 @@ public class PlayerPathFollow : MonoBehaviour
         if(accelerationInput == 1)
         {
             moveSpeed += 0.08f;
-            print("Accelerate" + moveSpeed);
+            //print("Accelerate" + moveSpeed);
         }
         else if(accelerationInput == 0)
         {
@@ -75,7 +80,7 @@ public class PlayerPathFollow : MonoBehaviour
         {
             //Apply Brakes
             moveSpeed -= 0.1f;
-            print("Deccelerate" + moveSpeed);
+            //print("Deccelerate" + moveSpeed);
         }
 
         
@@ -103,10 +108,16 @@ public class PlayerPathFollow : MonoBehaviour
             // If Rival reaches position of waypoint he walked towards
             //The waypointIndex is increased by 1
             // And Rival starts to walk to next waypoint
-            if (transform.position == waypoints[waypointIndex].transform.position)
+            if (transform.position == waypoints[waypointIndex].transform.position && waypointIndex != waypoints.Length)
             {
                 //print("Rival reached checkpoint" + waypointIndex);
                 waypointIndex += 1;
+            }
+            if( waypointIndex == waypoints.Length && lapCounter != totalLaps )
+            {
+                waypointIndex = 0;
+                lapCounter++;
+                print("Player is on Lap " + lapCounter);
             }
         }
     }
