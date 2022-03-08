@@ -76,6 +76,7 @@ public class PathFollow : MonoBehaviour
                 
                 waypointIndex = 0;               
                 lapCounter++;
+                moveSpeed += 0.2f; // a slight boost in difficulty to make the race seem close
                 print("This Cars Current Lap is " + lapCounter);
             }
 

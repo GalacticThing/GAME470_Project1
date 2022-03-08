@@ -25,7 +25,7 @@ public class PositionHandler : MonoBehaviour
 
     void OnPassCheckpoint(CarLapCounter carLapCounter)
     {
-
+        Debug.Log($"Event: Car {carLapCounter.gameObject.name} passed a checkpoint");
     }
 
     
