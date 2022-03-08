@@ -37,10 +37,10 @@ public class PlayerPathFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.A)) // Acceleration Input
+        if (Input.GetKey(KeyCode.A) && spinOut == false) // Acceleration Input
         {
             accelerationInput = 1;
-            print("accelerate");
+            //print("accelerate");
         }
         /*
         else if(Input.GetKeyUp(KeyCode.A))
@@ -52,8 +52,9 @@ public class PlayerPathFollow : MonoBehaviour
         else if (Input.GetKey(KeyCode.D)) // Decceleration Input
         {
             accelerationInput = -1;
-            print("Brake");
+            //print("Brake");
         }
+
         ApplyForwardMovement();
         Move();
     }
@@ -79,7 +80,7 @@ public class PlayerPathFollow : MonoBehaviour
         }
         else if(accelerationInput == 0)
         {
-            moveSpeed += 0.01f;
+            moveSpeed = 0.8f;
             if(moveSpeed >= 1 && accelerationInput == 0)
             {
                 rotZ += Time.deltaTime * rotationSpeed;
@@ -101,13 +102,24 @@ public class PlayerPathFollow : MonoBehaviour
     public IEnumerator SpinOut()
     {
         spinOut = true;
-        rotZ +=  Time.deltaTime * rotationSpeed;
-        transform.rotation = Quaternion.Euler(0, 0, rotZ);
+        //rotZ +=  Time.deltaTime * rotationSpeed;
 
-        moveSpeed = 0.1F; // slow down car
+        moveSpeed = 0.8F; // slow down car
         accelerationInput = 0;
 
-        yield return new WaitForSeconds(32F);
+        float t = 0;
+        while (t < 0.8)
+        {
+            print("RotZ is: " + rotZ);
+            rotZ += (Time.deltaTime * rotationSpeed) / 10;
+            if (rotZ >= 15) rotZ = 15;
+            transform.Rotate(Vector3.forward, rotZ);
+            yield return new WaitForSeconds(0.01f);
+            t += Time.deltaTime;
+        }
+
+        //yield return null;
+        //yield return new WaitForSeconds(32F);
         accelerationInput = 1;
         spinOut = false;
 
@@ -116,8 +128,9 @@ public class PlayerPathFollow : MonoBehaviour
 
     private void Move()
     {
-        //print("Rival Start Moving");
+        //if (spinOut == true) return;
 
+        //print("Rival Start Moving");
         // If Rival didn't reach the last waypoint it can move
         // If Rival reached last waypoint then it stops
         if (waypointIndex <= waypoints.Length - 1)
@@ -137,7 +150,7 @@ public class PlayerPathFollow : MonoBehaviour
             // And Rival starts to walk to next waypoint
             if (transform.position == waypoints[waypointIndex].transform.position && waypointIndex != waypoints.Length)
             {
-                //print("Rival reached checkpoint" + waypointIndex);
+                print("Player reached checkpoint" + waypointIndex);
                 
                 waypointIndex += 1;
                 if(waypointIndex == waypoints.Length && lapCounter != totalLaps) // this prevents an issue with the array size
@@ -157,7 +170,7 @@ public class PlayerPathFollow : MonoBehaviour
             //Spinout protocols
             //checks the players moveSpeed at certain points to see if they are going too fast
 
-            if(waypointIndex == 2 && moveSpeed > turnSpeedLimit)
+            if((waypointIndex == 2 || waypointIndex == 10 || waypointIndex == 22 || waypointIndex == 29 || waypointIndex == 34 || waypointIndex == 40 || waypointIndex == 45 || waypointIndex == 50 || waypointIndex == 56) && moveSpeed > turnSpeedLimit)
             {
                 StartCoroutine(SpinOut());
             }

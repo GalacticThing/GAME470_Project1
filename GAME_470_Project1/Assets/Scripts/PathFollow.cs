@@ -62,7 +62,7 @@ public class PathFollow : MonoBehaviour
             // And Rival starts to walk to next waypoint
             if ( transform.position == waypoints[waypointIndex].transform.position && waypointIndex != waypoints.Length)
             {
-                //print(" Rival reached checkpoint" + waypointIndex);    
+                //print(" Rival reached checkpoint" + waypointIndex);
                 waypointIndex += 1;
                 if (waypointIndex == waypoints.Length && lapCounter != totalLaps) // this prevents an issue with the array size
                 {
