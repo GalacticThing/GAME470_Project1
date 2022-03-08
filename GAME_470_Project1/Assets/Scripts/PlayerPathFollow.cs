@@ -75,7 +75,7 @@ public class PlayerPathFollow : MonoBehaviour
         
         if(accelerationInput == 1)
         {
-            moveSpeed += 0.08f;
+            moveSpeed += 0.06f;
             //print("Accelerate" + moveSpeed);
         }
         else if(accelerationInput == 0)

@@ -646,6 +646,18 @@ PrefabInstance:
       value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 2094661397, guid: 3146b89477b864b47a317dd897491c9f, type: 3}
+      propertyPath: totalLaps
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094661397, guid: 3146b89477b864b47a317dd897491c9f, type: 3}
+      propertyPath: turnSpeed
+      value: 3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094661397, guid: 3146b89477b864b47a317dd897491c9f, type: 3}
+      propertyPath: defaultMoveSpeed
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094661397, guid: 3146b89477b864b47a317dd897491c9f, type: 3}
       propertyPath: waypoints.Array.size
       value: 63
       objectReference: {fileID: 0}
@@ -13587,6 +13599,102 @@ Transform:
   m_Father: {fileID: 1736753056}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1403054486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1403054487}
+  - component: {fileID: 1403054490}
+  - component: {fileID: 1403054489}
+  - component: {fileID: 1403054488}
+  m_Layer: 5
+  m_Name: LapCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1403054487
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403054486}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1727505610}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.87, y: -6.21}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1403054488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403054486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ef7fb7d68d6eb489599a0c0faa9366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carLapCounter: {fileID: 1243539870}
+  text: {fileID: 1403054489}
+--- !u!114 &1403054489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403054486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.90145755, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '0
+
+'
+--- !u!222 &1403054490
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403054486}
+  m_CullTransparentMesh: 1
 --- !u!1 &1409219713
 GameObject:
   m_ObjectHideFlags: 0
@@ -14196,6 +14304,102 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1467879240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1467879241}
+  - component: {fileID: 1467879244}
+  - component: {fileID: 1467879243}
+  - component: {fileID: 1467879242}
+  m_Layer: 5
+  m_Name: LapCounterTitle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1467879241
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467879240}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1727505610}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.87, y: -6.21}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1467879242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467879240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ef7fb7d68d6eb489599a0c0faa9366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carLapCounter: {fileID: 1243539870}
+  text: {fileID: 1467879243}
+--- !u!114 &1467879243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467879240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.90145755, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '0
+
+'
+--- !u!222 &1467879244
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467879240}
+  m_CullTransparentMesh: 1
 --- !u!1 &1470153990
 GameObject:
   m_ObjectHideFlags: 0
@@ -16473,6 +16677,8 @@ RectTransform:
   m_Children:
   - {fileID: 1314177645}
   - {fileID: 1217007510}
+  - {fileID: 1403054487}
+  - {fileID: 1467879241}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19228,7 +19434,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2094661397, guid: 3146b89477b864b47a317dd897491c9f, type: 3}
       propertyPath: moveSpeed
-      value: 4.5
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094661397, guid: 3146b89477b864b47a317dd897491c9f, type: 3}
+      propertyPath: totalLaps
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094661397, guid: 3146b89477b864b47a317dd897491c9f, type: 3}
+      propertyPath: turnSpeed
+      value: 3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094661397, guid: 3146b89477b864b47a317dd897491c9f, type: 3}
+      propertyPath: defaultMoveSpeed
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 2094661397, guid: 3146b89477b864b47a317dd897491c9f, type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -19602,6 +19820,10 @@ PrefabInstance:
     - target: {fileID: 1916514084, guid: ee34f6be655d1c64a85943d0c1ba5249, type: 3}
       propertyPath: stunTime
       value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916514084, guid: ee34f6be655d1c64a85943d0c1ba5249, type: 3}
+      propertyPath: totalLaps
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1916514084, guid: ee34f6be655d1c64a85943d0c1ba5249, type: 3}
       propertyPath: rotationSpeed

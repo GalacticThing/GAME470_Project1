@@ -7,6 +7,8 @@ public class UpdatePositionText : MonoBehaviour
 {
     public CarLapCounter carLapCounter;
     public Text text;
+
+    public Text lapText;
    
     
 
@@ -21,5 +23,7 @@ public class UpdatePositionText : MonoBehaviour
     {
         text.text = carLapCounter.carPositionText.text;
         print(carLapCounter.carPositionText);
+
+        lapText.text = carLapCounter.lapCounterText.text;
     }
 }

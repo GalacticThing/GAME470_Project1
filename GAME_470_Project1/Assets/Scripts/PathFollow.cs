@@ -11,6 +11,8 @@ public class PathFollow : MonoBehaviour
     [SerializeField]
     //private float moveSpeed = 2f;
     public float moveSpeed = 2f;
+    public float turnSpeed = 4f;
+    public float defaultMoveSpeed;
 
    
 
@@ -80,7 +82,18 @@ public class PathFollow : MonoBehaviour
                 print("This Cars Current Lap is " + lapCounter);
             }
 
-            
+            //Ai racer decceleration on turns
+            if ((waypointIndex == 2 || waypointIndex == 10 || waypointIndex == 22 || waypointIndex == 29 || waypointIndex == 34 || waypointIndex == 40 || waypointIndex == 45 || waypointIndex == 50 || waypointIndex == 56))
+            {
+                moveSpeed = turnSpeed;
+            }
+            else
+            {
+                moveSpeed = defaultMoveSpeed;
+            }
+
+
+
         }
 
     }

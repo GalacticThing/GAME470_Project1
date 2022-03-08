@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class CarLapCounter : MonoBehaviour
 {
     public Text carPositionText;
+    public Text lapCounterText;
+
     //public bool playerCar;
 
     int passedCheckPointNumber = 0;
@@ -81,10 +84,13 @@ public class CarLapCounter : MonoBehaviour
                 {
                     passedCheckPointNumber = 0;
                     lapsCompleted++;
+                    lapCounterText.text = lapsCompleted.ToString();
 
                     if (lapsCompleted >= lapsToComplete)
                     {
                         isRaceCompleted = true;
+                        print("race over");
+                        SceneManager.LoadScene("TitleScene");
                     }
                 }
 
@@ -94,7 +100,7 @@ public class CarLapCounter : MonoBehaviour
                 // Now show the cars position as it has been calculated
                 if (isRaceCompleted)
                 {
-                    StartCoroutine(ShowPositionCO(100));
+                    StartCoroutine(ShowPositionCO(10));
 
                 }
                 else
