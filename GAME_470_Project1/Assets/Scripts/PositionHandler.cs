@@ -6,6 +6,7 @@ using UnityEngine;
 public class PositionHandler : MonoBehaviour
 {
     public List<CarLapCounter> carLapCounters = new List<CarLapCounter>();
+    
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class PositionHandler : MonoBehaviour
     void OnPassCheckpoint(CarLapCounter carLapCounter)
     {
         // test : Debug.Log($"Event: Car {carLapCounter.gameObject.name} passed a checkpoint");
+
         //Sort the cars position first based on how many checkpoints they have passed, 
         // Then sort based on time
         carLapCounters = carLapCounters.OrderByDescending(s => s.GetNumberOfcheckpointsPassed()).ThenBy(s => s.GetTimeAtLastCheckPoint()).ToList();
