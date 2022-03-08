@@ -93,7 +93,7 @@ public class CarLapCounter : MonoBehaviour
                 }
                 else
                 {
-                    StartCoroutine(ShowPositionCO(1.5f));
+                    //StartCoroutine(ShowPositionCO(1.5f));
                 }
             }
         }

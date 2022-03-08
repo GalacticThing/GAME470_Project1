@@ -34,7 +34,7 @@ public class CarSfxHandler : MonoBehaviour
     {
         UpdateEngineSFX();
         UpdateBrakingSFX();
-
+        UpdateCrashSFX();
     }
 
     void UpdateEngineSFX()
@@ -68,5 +68,14 @@ public class CarSfxHandler : MonoBehaviour
         {
             carBrakeAudioSource.volume = Mathf.Lerp(carBrakeAudioSource.volume, 0, Time.deltaTime * 10);
         } 
+    }
+
+    void UpdateCrashSFX()
+    {
+        if (playerPathFollow.spinOut)
+        {
+            //carCrashAudioSource.Play();
+            //carCrashAudioSource.volume = Mathf.Lerp(carBrakeAudioSource.volume, 1, Time.deltaTime * 10);
+        }
     }
 }

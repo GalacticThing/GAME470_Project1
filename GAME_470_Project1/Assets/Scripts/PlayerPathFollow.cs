@@ -9,6 +9,11 @@ public class PlayerPathFollow : MonoBehaviour
     public float moveSpeed = 0f; // controls the rate at which the car moves along the path
     private int waypointIndex = 0; // used to identify waypoints and keep the car on the path
     public float accelerationInput = 0; // checks it the player is pressing forward or back
+    public float turnSpeedLimit; // when does a player spinout during a turn
+    private float rotZ;
+    public float rotationSpeed; // for when the car spins out
+    public float stunTime;
+    public bool spinOut;
 
     protected float velocityVsUp = 0;
 
@@ -74,14 +79,37 @@ public class PlayerPathFollow : MonoBehaviour
         }
         else if(accelerationInput == 0)
         {
-            moveSpeed -= 0.1f;
+            moveSpeed += 0.01f;
+            if(moveSpeed >= 1 && accelerationInput == 0)
+            {
+                rotZ += Time.deltaTime * rotationSpeed;
+                transform.rotation = Quaternion.Euler(0, 0, rotZ);
+            }
+            
+            
         }
         else if(accelerationInput == -1)
         {
             //Apply Brakes
-            moveSpeed -= 0.1f;
+            moveSpeed -= 0.05f;
             //print("Deccelerate" + moveSpeed);
         }
+
+        
+    }
+
+    public IEnumerator SpinOut()
+    {
+        spinOut = true;
+        rotZ +=  Time.deltaTime * rotationSpeed;
+        transform.rotation = Quaternion.Euler(0, 0, rotZ);
+
+        moveSpeed = 0.1F; // slow down car
+        accelerationInput = 0;
+
+        yield return new WaitForSeconds(32F);
+        accelerationInput = 1;
+        spinOut = false;
 
         
     }
@@ -124,6 +152,14 @@ public class PlayerPathFollow : MonoBehaviour
                 waypointIndex = 0;                
                 lapCounter++;
                 print("Player is on Lap " + lapCounter);
+            }
+
+            //Spinout protocols
+            //checks the players moveSpeed at certain points to see if they are going too fast
+
+            if(waypointIndex == 2 && moveSpeed > turnSpeedLimit)
+            {
+                StartCoroutine(SpinOut());
             }
         }
     }

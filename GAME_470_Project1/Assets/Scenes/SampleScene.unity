@@ -616,7 +616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2532546170880887285, guid: 3146b89477b864b47a317dd897491c9f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2532546172586294364, guid: 3146b89477b864b47a317dd897491c9f, type: 3}
       propertyPath: m_Sprite
@@ -10725,7 +10725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2532546170880887285, guid: 3146b89477b864b47a317dd897491c9f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5591789079700092539, guid: 3146b89477b864b47a317dd897491c9f, type: 3}
       propertyPath: m_Enabled
@@ -10744,6 +10744,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1916514084, guid: ee34f6be655d1c64a85943d0c1ba5249, type: 3}
+      propertyPath: maxSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916514084, guid: ee34f6be655d1c64a85943d0c1ba5249, type: 3}
+      propertyPath: stunTime
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916514084, guid: ee34f6be655d1c64a85943d0c1ba5249, type: 3}
+      propertyPath: rotationSpeed
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916514084, guid: ee34f6be655d1c64a85943d0c1ba5249, type: 3}
+      propertyPath: turnSpeedLimit
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916514084, guid: ee34f6be655d1c64a85943d0c1ba5249, type: 3}
+      propertyPath: accelerationInput
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1916514084, guid: ee34f6be655d1c64a85943d0c1ba5249, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
