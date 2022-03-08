@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class UpdatePositionText : MonoBehaviour
 {
-    public PositionHandler positionHandler;
-    public string textValue;
-    public Text positionNumber;
+    public CarLapCounter carLapCounter;
+    public Text text;
+   
+    
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,6 @@ public class UpdatePositionText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //positionNumber.text = positionHandler.carPosition.ToString(); 
+        text.text = carLapCounter.carPositionText.text;
     }
 }
