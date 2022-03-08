@@ -20,5 +20,6 @@ public class UpdatePositionText : MonoBehaviour
     void Update()
     {
         text.text = carLapCounter.carPositionText.text;
+        print(carLapCounter.carPositionText);
     }
 }

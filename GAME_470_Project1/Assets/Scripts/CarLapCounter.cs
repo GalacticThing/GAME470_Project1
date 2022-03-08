@@ -7,7 +7,7 @@ using UnityEngine;
 public class CarLapCounter : MonoBehaviour
 {
     public Text carPositionText;
-    public bool playerCar;
+    //public bool playerCar;
 
     int passedCheckPointNumber = 0;
     float timeAtLastPassedCheckPoint = 0;
@@ -26,11 +26,13 @@ public class CarLapCounter : MonoBehaviour
 
     public void SetCarPosition(int position)
     {
-        print("Position: " + position);
+        
         carPosition = position;
+        //print("Position: " + position);
+
     }
 
-    public int GetNumberOfcheckpointsPassed()
+    public int GetNumberOfCheckpointsPassed()
     {
         return numberOfPassedCheckpoints;
     }
@@ -43,8 +45,9 @@ public class CarLapCounter : MonoBehaviour
     IEnumerator ShowPositionCO(float delayUntilHidePosition)
     {
         carPositionText.text = carPosition.ToString();
+        print("Position" + carPosition);
 
-        carPositionText.gameObject.SetActive(true);
+        //carPositionText.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(delayUntilHidePosition);
 
@@ -65,7 +68,7 @@ public class CarLapCounter : MonoBehaviour
             CheckPoint checkPoint = collider2D.GetComponent<CheckPoint>();
 
             // Make sure we are passing checkpoints in the right order
-            if (passedCheckPointNumber +1 == checkPoint.checkPointNumber)
+            if (passedCheckPointNumber + 1 == checkPoint.checkPointNumber)
             {
                 passedCheckPointNumber = checkPoint.checkPointNumber;
 
@@ -96,7 +99,7 @@ public class CarLapCounter : MonoBehaviour
                 }
                 else
                 {
-                    //StartCoroutine(ShowPositionCO(1.5f));
+                    StartCoroutine(ShowPositionCO(1.5f));
                 }
             }
         }
