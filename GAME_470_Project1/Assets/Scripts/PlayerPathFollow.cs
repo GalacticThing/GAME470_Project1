@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerPathFollow : MonoBehaviour
@@ -21,9 +22,11 @@ public class PlayerPathFollow : MonoBehaviour
     public float minSpeed; // value used to prevent the car from totally reversing
 
     // Lap counter
-    private int lapCounter = 1; //keeps track of a cars current Lap
+    public int lapCounter = 1; //keeps track of a cars current Lap
 
     public int totalLaps = 3;
+
+    public Text lapCounterText;
 
 
 
@@ -164,6 +167,7 @@ public class PlayerPathFollow : MonoBehaviour
                 
                 waypointIndex = 0;                
                 lapCounter++;
+                lapCounterText.text = lapCounter.ToString();
                 print("Player is on Lap " + lapCounter);
             }
 

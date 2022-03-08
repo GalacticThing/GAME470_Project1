@@ -12761,6 +12761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carLapCounter: {fileID: 1243539870}
+  playerPathFollow: {fileID: 0}
   text: {fileID: 1314177646}
   lapText: {fileID: 0}
 --- !u!1 &1317217169
@@ -13618,7 +13619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1403054487
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13651,6 +13652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carLapCounter: {fileID: 1243539870}
+  playerPathFollow: {fileID: 1782867496}
   text: {fileID: 0}
   lapText: {fileID: 1403054489}
 --- !u!114 &1403054489
@@ -14323,7 +14325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1467879241
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17255,6 +17257,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1782867496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1916514084, guid: ee34f6be655d1c64a85943d0c1ba5249, type: 3}
+  m_PrefabInstance: {fileID: 5297665004607263718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d476765d2eb97a94f8a36b6b95da276a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1790426667
 GameObject:
   m_ObjectHideFlags: 0
