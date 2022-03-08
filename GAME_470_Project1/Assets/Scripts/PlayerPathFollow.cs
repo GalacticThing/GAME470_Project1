@@ -110,7 +110,7 @@ public class PlayerPathFollow : MonoBehaviour
         float t = 0;
         while (t < 0.8)
         {
-            print("RotZ is: " + rotZ);
+            //print("RotZ is: " + rotZ);
             rotZ += (Time.deltaTime * rotationSpeed) / 10;
             if (rotZ >= 15) rotZ = 15;
             transform.Rotate(Vector3.forward, rotZ);

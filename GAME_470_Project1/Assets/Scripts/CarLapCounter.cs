@@ -7,6 +7,7 @@ using UnityEngine;
 public class CarLapCounter : MonoBehaviour
 {
     public Text carPositionText;
+    public bool playerCar;
 
     int passedCheckPointNumber = 0;
     float timeAtLastPassedCheckPoint = 0;
@@ -25,6 +26,7 @@ public class CarLapCounter : MonoBehaviour
 
     public void SetCarPosition(int position)
     {
+        print("Position: " + position);
         carPosition = position;
     }
 
@@ -56,6 +58,7 @@ public class CarLapCounter : MonoBehaviour
             //Once a car has completed the race, stop checking checkpoints and conting laps
             if (isRaceCompleted)
             {
+                StartCoroutine(ShowPositionCO(100));
                 return;
             }
 
