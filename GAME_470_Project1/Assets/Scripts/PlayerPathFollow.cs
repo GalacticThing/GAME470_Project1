@@ -112,12 +112,11 @@ public class PlayerPathFollow : MonoBehaviour
                 //print("Rival reached checkpoint" + waypointIndex);
                 
                 waypointIndex += 1;
-                if(waypointIndex == waypoints.Length && lapCounter != totalLaps)
+                if(waypointIndex == waypoints.Length && lapCounter != totalLaps) // this prevents an issue with the array size
                 {
                     waypointIndex = 0;
                 }
-
-                transform.up = waypoints[waypointIndex].position - transform.position;
+                transform.up = waypoints[waypointIndex].position - transform.position; // forces car to always face checkpoint
             }
             if( waypointIndex == waypoints.Length -1 && lapCounter != totalLaps )
             {
