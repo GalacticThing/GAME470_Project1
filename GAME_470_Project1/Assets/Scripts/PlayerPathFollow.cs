@@ -102,7 +102,6 @@ public class PlayerPathFollow : MonoBehaviour
                                    moveSpeed * Time.deltaTime);
 
 
-
             //print("Rival continue to move" + waypointIndex);
 
             // If Rival reaches position of waypoint he walked towards
@@ -111,11 +110,19 @@ public class PlayerPathFollow : MonoBehaviour
             if (transform.position == waypoints[waypointIndex].transform.position && waypointIndex != waypoints.Length)
             {
                 //print("Rival reached checkpoint" + waypointIndex);
+                
                 waypointIndex += 1;
+                if(waypointIndex == waypoints.Length && lapCounter != totalLaps)
+                {
+                    waypointIndex = 0;
+                }
+
+                transform.up = waypoints[waypointIndex].position - transform.position;
             }
-            if( waypointIndex == waypoints.Length && lapCounter != totalLaps )
+            if( waypointIndex == waypoints.Length -1 && lapCounter != totalLaps )
             {
-                waypointIndex = 0;
+                
+                waypointIndex = 0;                
                 lapCounter++;
                 print("Player is on Lap " + lapCounter);
             }

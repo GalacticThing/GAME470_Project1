@@ -12,7 +12,7 @@ public class PathFollow : MonoBehaviour
     //private float moveSpeed = 2f;
     public float moveSpeed = 2f;
 
-    
+   
 
     //Index of curr waypoint from which Rival moves
     private int waypointIndex = 0;
@@ -21,13 +21,14 @@ public class PathFollow : MonoBehaviour
     private int lapCounter = 1; //keeps track of a cars current Lap
 
     public int totalLaps = 3;
-   
+
 
 
     void Start()
     {
         // Set position of Rival as position of first waypoint
         transform.position = waypoints[waypointIndex].transform.position;
+  
     }
 
     // Update is called once per frame
@@ -35,7 +36,7 @@ public class PathFollow : MonoBehaviour
     {
         // Move Rival
         Move();
-        
+
     }
 
     private void Move()
@@ -52,25 +53,34 @@ public class PathFollow : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position,
                                   waypoints[waypointIndex].transform.position,
                                    moveSpeed * Time.deltaTime);
-            
-            
-            
+
+
             //print("Rival continue to move" + waypointIndex);
 
             // If Rival reaches position of waypoint he walked towards
             //The waypointIndex is increased by 1
             // And Rival starts to walk to next waypoint
-           if( transform.position == waypoints[waypointIndex].transform.position && waypointIndex != waypoints.Length)
+            if ( transform.position == waypoints[waypointIndex].transform.position && waypointIndex != waypoints.Length)
             {
-                //print(" Rival reached checkpoint" + waypointIndex);
+                //print(" Rival reached checkpoint" + waypointIndex);    
                 waypointIndex += 1;
+                if (waypointIndex == waypoints.Length && lapCounter != totalLaps)
+                {
+                    waypointIndex = 0;
+                }
+                transform.up = waypoints[waypointIndex].position - transform.position;
+
             }
-           if(waypointIndex == waypoints.Length && lapCounter != totalLaps)
+           if(waypointIndex == waypoints.Length -1 && lapCounter != totalLaps)
             {
-                waypointIndex = 0;
+                
+                waypointIndex = 0;               
                 lapCounter++;
                 print("This Cars Current Lap is " + lapCounter);
             }
+
+            
         }
+
     }
 }
